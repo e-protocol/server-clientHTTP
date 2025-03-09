@@ -45,5 +45,5 @@ Client Windows 10:
 - type command: ip {server ip} {port}
 
 ## P.S.
-- type exit in both apss to close them
+- type "exit" in both apps to close them
 - all command have space as delimiter
