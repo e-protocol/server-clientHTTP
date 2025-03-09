@@ -35,7 +35,8 @@ Moreover, due time limitation and various ways to process http requests, the las
 ## Usage
 Server Linux:
 - location of executable: server-clientHTTP/serverHTTP/build/serverHTTP/src/serverHTTP 
-- start under root with example command ./serverHTTP {port}
+- start under root with command: ./serverHTTP {port}
+- {port} is optional, if not provided = default port 8080
 - ifconfig your server machine ip
 Client Windows 10:
 - location of executable: server-clientHTTP/httpClient/out/build/x64-release/httpClient/httpClient.exe
