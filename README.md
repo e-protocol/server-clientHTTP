@@ -9,8 +9,8 @@ This solution was made for demonstration. It's based on task requirements below:
 3) Server should write logs
 4) Server should send logs on /log request
 5) Server should upload file somewhere in "/tmp" directory by /upload request
-6) Server should be able uploading files by wget or curl**
-7) Server should start only under root for Linux target machine
+6) Server should start only under root for Linux target machine
+7) Server should be able uploading files by wget or curl**
 
 ## Note!
 * No additional information was provided. So this solution is abstract and not applicable for real purposes.
