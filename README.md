@@ -38,6 +38,7 @@ Server Linux:
 - start under root with command: ./serverHTTP {port}
 - {port} is optional, if not provided = default port 8080
 - ifconfig your server machine ip
+
 Client Windows 10:
 - location of executable: server-clientHTTP/httpClient/out/build/x64-release/httpClient/httpClient.exe
 - start app
