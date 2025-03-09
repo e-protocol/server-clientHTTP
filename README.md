@@ -5,12 +5,13 @@ This solution was made for demonstration. It's based on task requirements below:
 
 ## Task*
 1) Create light http server to listen any specified port
-2) Server should response "Status ok" on /info request
-3) Server should write logs
-4) Server should send logs on /log request
-5) Server should upload file somewhere in "/tmp" directory by /upload request
-6) Server should start only under root for Linux target machine
-7) Server should be able uploading files by wget or curl**
+2) Server should operate POST http requests
+3) Server should response "Status ok" on /info request
+4) Server should write logs
+5) Server should send logs on /log request
+6) Server should upload file somewhere in "/tmp" directory by /upload request
+7) Server should start only under root for Linux target machine
+8) Server should be able uploading files by wget or curl**
 
 ## Note!
 *No additional information was provided. So this solution is abstract and not applicable for real purposes.
