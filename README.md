@@ -40,6 +40,6 @@ Client Windows 10:
 - start app
 - type command: ip {server ip} {port}
 
-##P.S.
+## P.S.
 - type exit in both apss to close them
 - all command have space as delimiter
