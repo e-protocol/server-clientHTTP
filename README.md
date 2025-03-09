@@ -46,4 +46,4 @@ Client Windows 10:
 
 ## P.S.
 - type "exit" in both apps to close them
-- all command have space as delimiter
+- all commands have space as delimiter
