@@ -1,1 +1,0 @@
-/usr/bin/g++ -O3 -DNDEBUG CMakeFiles/serverHTTP.dir/serverMain.cpp.o -o serverHTTP
