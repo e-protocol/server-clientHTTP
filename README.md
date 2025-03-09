@@ -25,7 +25,7 @@ Moreover, due time limitation and various ways to process http requests, the las
 - Next bytes are the file name
 - Server just read this information and remove it from file before saving
 
-***No multi-part request write support. No file size check!
+***No multi-part request write support! No file size check! Server low lvl security!
 
 ## Build Requirements
 - Boost 1.83 (Both)
