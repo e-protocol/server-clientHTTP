@@ -1,0 +1,5 @@
+D:/Programs/VisualStudio2022/VSProjects/tests/httpClient/out/build/x64-release/CMakeFiles/edit_cache.dir
+D:/Programs/VisualStudio2022/VSProjects/tests/httpClient/out/build/x64-release/CMakeFiles/rebuild_cache.dir
+D:/Programs/VisualStudio2022/VSProjects/tests/httpClient/out/build/x64-release/httpClient/CMakeFiles/httpClient.dir
+D:/Programs/VisualStudio2022/VSProjects/tests/httpClient/out/build/x64-release/httpClient/CMakeFiles/edit_cache.dir
+D:/Programs/VisualStudio2022/VSProjects/tests/httpClient/out/build/x64-release/httpClient/CMakeFiles/rebuild_cache.dir
