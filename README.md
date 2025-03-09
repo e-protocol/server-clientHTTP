@@ -1,7 +1,7 @@
 # Example of a simple server and client http post request
 
 ## Description
-This example was made for demonstration. It's based on task requirements below:
+This solution was made for demonstration. It's based on task requirements below:
 
 ##Task*
 1) Create light http server
@@ -12,14 +12,20 @@ This example was made for demonstration. It's based on task requirements below:
 6) Server should be able uploading by wget or curl**
 
 ##Note!
-*
-** This wasn't achieved directly. Server is able to take on files in next algorithm:
+* No additional information was provided. So this solution is abstract and not applicable for real purposes.
+Moreover, due time limitation and various ways to process http requests, the last point was skipped. See below:
+** No wget and curl support. But! Custom client was created to demonstrate that server is able to take on files in next algorithm:
 - Client send file via single http POST request
 - File is transfered as string in req.body() with additional information about FileName.size() and FileName.extension decoded in front
 - First byte is a size of fileName + .extension
 - Next bytes are the file name
+- Server just read this information and remove it from file before saving
+*** No multi-part request write support. No file size check!
 
-##Requirements
-
+##Build Requirements
+- Boost 1.83 (Both)
+- GCC 14.2 (Server)
+- VS Code with cmake and c++ extensions (Server)
+- Visual Studio 2022 (client)
 
 ##Instructions
