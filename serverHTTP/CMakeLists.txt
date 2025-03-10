@@ -13,4 +13,5 @@ if(Boost_FOUND)
 endif()
 
 add_subdirectory(src)
+add_subdirectory(armhf)
 target_link_libraries(${PROJECT_NAME} Boost::headers)

@@ -64,15 +64,33 @@ CMAKE_BINARY_DIR = /home/kali/VSCodeProjects/serverHTTP/build/serverHTTP
 
 # The main recursive "all" target.
 all: src/all
+all: armhf/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
+preinstall: armhf/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: src/clean
+clean: armhf/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory armhf
+
+# Recursive "all" directory target.
+armhf/all:
+.PHONY : armhf/all
+
+# Recursive "preinstall" directory target.
+armhf/preinstall:
+.PHONY : armhf/preinstall
+
+# Recursive "clean" directory target.
+armhf/clean:
+.PHONY : armhf/clean
 
 #=============================================================================
 # Directory level rules for directory src

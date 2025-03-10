@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
@@ -32,6 +33,17 @@
 					[
 						0
 					]
+				},
+				{
+					"build" : "armhf",
+					"jsonFile" : "directory-armhf-Release-71e1d15e191906f75f46.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "armhf"
 				}
 			],
 			"name" : "Release",
@@ -41,7 +53,8 @@
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					],
 					"name" : "serverHTTP",
 					"targetIndexes" : 

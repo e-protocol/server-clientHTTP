@@ -3,3 +3,5 @@
 /home/kali/VSCodeProjects/serverHTTP/build/serverHTTP/src/CMakeFiles/serverHTTP.dir
 /home/kali/VSCodeProjects/serverHTTP/build/serverHTTP/src/CMakeFiles/edit_cache.dir
 /home/kali/VSCodeProjects/serverHTTP/build/serverHTTP/src/CMakeFiles/rebuild_cache.dir
+/home/kali/VSCodeProjects/serverHTTP/build/serverHTTP/armhf/CMakeFiles/edit_cache.dir
+/home/kali/VSCodeProjects/serverHTTP/build/serverHTTP/armhf/CMakeFiles/rebuild_cache.dir
