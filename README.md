@@ -48,3 +48,6 @@ Client Windows 10:
 ## P.S.
 - type "exit" in both apps to close them
 - all commands have space as delimiter
+
+## P.P.S.
+- added armhf build
