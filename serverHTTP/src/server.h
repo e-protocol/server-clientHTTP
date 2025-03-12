@@ -123,14 +123,14 @@ private:
         }
         else if(target == "/upload")
         {
-            if(saveFile(req.body()))
+            if(saveFile(std::move(req)))
             {
                 res.result(http::status::ok);
                 res.body() = "File uploaded";
             }
             else
             {
-                res.result(http::status::bad_request);
+                res.result(http::status::ok);
                 res.body() = "Failed uploading";
             }
         }
@@ -139,34 +139,61 @@ private:
         return res;
     }
 
-    bool saveFile(std::string& data)
+    bool saveFile(http::request<http::string_body>&& req)
     {
         namespace fs = std::filesystem;
-        std::string path = fs::current_path().string() + "/tmp";
-        std::string name = data.substr(1, data[0]); //first char is num of next chars as file name
-        data.erase(0, data[0] + 1);
+        std::string path = "/tmp";
+        std::string name;
 
-        if(!fs::exists(path))
-            fs::create_directory(path);
+        for(auto& f : req.base())
+            if(f.name_string() == "Content-Disposition")
+            {
+                size_t found = f.value().find("filename=");
+                
+                if(found == std::string::npos)
+                {
+                    writeLog("Error: Invalid Content-Disposition");
+                    return false;
+                }
 
-        path += "/" + name;
+                name = f.value().substr(found + std::string("filename=").size(), f.value().size());
+            }
 
-        if(fs::exists(path))
-            fs::remove(path);
+        
+        try
+        {
+            if(!fs::exists(path))
+            {
+                writeLog("Error: /tmp folder");
+                return false;
+            }
+
+            path += "/" + name;
+
+            if(fs::exists(path))
+                fs::remove(path);
+        }
+        catch(const std::exception& e)
+        {
+            writeLog("Error: /tmp folder " + std::string(e.what()));
+            return false;
+        }
 
         std::ofstream file;
 
         try
         {
             file.open(path, std::ios::out | std::ios::binary | std::ios::app);
-            file.write(data.data(), data.size());
+            file.write(req.body().data(), req.body().size());
             file.close();
         }
         catch(const std::exception& e)
         {
+            writeLog("Error: save file " + std::string(e.what()));
             return false;
         }
 
+        writeLog("File uploaded: " + name);
         return true;
     }
     
@@ -184,6 +211,7 @@ public:
             std::stringstream ss;
             ss << port;
             std::string portName(ss.str());
+            std::cout << "Using Boost v" << BOOST_VERSION << "\n";
 
             writeLog("Server start. Listen port: " + portName);
             doAccept();

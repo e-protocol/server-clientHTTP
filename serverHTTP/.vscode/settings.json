@@ -1,5 +1,6 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}",
+    //"cmake.configureArgs": ["-DCMAKE_TOOLCHAIN_FILE=/home/kali/VSCodeProjects/serverHTTP/armhf/armhf-toolchain.cmake"],
     "files.associations": {
         "iosfwd": "cpp",
         "sstream": "cpp",

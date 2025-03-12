@@ -17,15 +17,9 @@ This solution was made for demonstration. It's based on task requirements below:
 *No additional information was provided. So this solution is abstract and not applicable for real purposes.
 Moreover, due time limitation and various ways to process http requests, the last point was skipped. See below:
 
-**No wget and curl support. But! Custom client was created on Windows 10 to demonstrate that server is able to take on files in next algorithm:
-- Client send file via single http POST request
-- File is transfered as string in req.body() with additional information:
-   FileName.size() and FileName.extension decoded in front where:
-- First byte is a size of fileName + .extension
-- Next bytes are the file name
-- Server just read this information and remove it from file before saving
+**Server is able to take on files if they include in http request content-field: "Content-Disposition" with value: "filename=<uploading_filename>"
 
-***No multi-part request write support! No file size check! Server low lvl security!
+**No multi-part request write support! No file size check! Server low lvl security!
 
 ## Build Requirements
 - Boost 1.83 (Both)
