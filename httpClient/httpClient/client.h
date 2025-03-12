@@ -186,9 +186,10 @@ private:
 			return false;
 		}
 
-		_req.body() = (char)fileName.size() + fileName + data; //first char is num of next chars as fileName
-		_req.content_length(_req.body().size());
-		_req.set(http::field::content_type, mimeType(_filePath));
+		_req.body() = data;
+		_req.content_length(data.size());
+		_req.set(http::field::content_type, "application/octet-stream");
+		_req.set(http::field::content_disposition, "form-data; filename=" + fileName);
 		return true;
 	}
 
