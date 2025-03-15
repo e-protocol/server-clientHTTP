@@ -144,21 +144,39 @@ private:
         namespace fs = std::filesystem;
         std::string path = "/tmp";
         std::string name;
+        std::string field("filename=");
+        std::string data(req.body().data());
+        size_t found = data.find(field); //index of "filename="
+        size_t fileSize = req.payload_size().get();
+        size_t boundary = std::string(req.body().c_str()).find("\n"); //boundary length
+        
+        if(fileSize == 0 || boundary == 0)
+        {
+            writeLog("Error: Invalid Content-Length or boundary");
+            return false;
+        }
 
-        for(auto& f : req.base())
-            if(f.name_string() == "Content-Disposition")
-            {
-                size_t found = f.value().find("filename=");
-                
-                if(found == std::string::npos)
-                {
-                    writeLog("Error: Invalid Content-Disposition");
-                    return false;
-                }
+        //payload consists of: boundary + req.body().data() + boundary + 2
+        fileSize -= data.size() + boundary + 1;
+      
+        if(found == std::string::npos)
+        {
+            writeLog("Error: Invalid Content-Disposition");
+            return false;
+        }
 
-                name = f.value().substr(found + std::string("filename=").size(), f.value().size());
-            }
+        //retrieve "filename=xxx"
+        for(size_t i = found + field.size() + 1; i < data.size(); ++i)
+            if(data[i] == '"')
+                break;
+            else
+                name += data[i];
 
+        if(name.empty())
+        {
+            writeLog("Error: could not find \"filename=\"");
+            return false;
+        }
         
         try
         {
@@ -175,7 +193,7 @@ private:
         }
         catch(const std::exception& e)
         {
-            writeLog("Error: /tmp folder " + std::string(e.what()));
+            writeLog("Error: /tmp folder! " + std::string(e.what()));
             return false;
         }
 
@@ -183,8 +201,9 @@ private:
 
         try
         {
+            const char* begin = req.body().c_str() + data.size() - 4; //begin of pure payload
             file.open(path, std::ios::out | std::ios::binary | std::ios::app);
-            file.write(req.body().data(), req.body().size());
+            file.write(begin, fileSize);
             file.close();
         }
         catch(const std::exception& e)

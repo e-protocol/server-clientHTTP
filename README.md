@@ -11,15 +11,8 @@ This solution was made for demonstration. It's based on task requirements below:
 5) Server should send logs on /log request
 6) Server should upload file somewhere in "/tmp" directory by /upload request
 7) Server should start only under root for Linux target machine
-8) Server should be able uploading files by wget or curl**
+8) Server should be able uploading files by wget or curl
 
-## Note!
-*No additional information was provided. So this solution is abstract and not applicable for real purposes.
-Moreover, due time limitation and various ways to process http requests, the last point was skipped. See below:
-
-**Server is able to take on files if they include in http request content-field: "Content-Disposition" with value: "filename=<uploading_filename>"
-
-**No multi-part request write support! No file size check! Server low lvl security!
 
 ## Build Requirements
 - Boost 1.83 (Both)

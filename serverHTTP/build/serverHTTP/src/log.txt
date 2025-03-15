@@ -1,1 +1,4 @@
-12/03/2025 06:43:4 Server start. Listen port: 1616
+15/03/2025 15:21:0 Server start. Listen port: 8080
+15/03/2025 15:21:0 Connected ip: 192.168.0.106
+15/03/2025 15:21:0 File uploaded: mx.jpg
+15/03/2025 15:21:0 Disconected ip: 192.168.0.106
